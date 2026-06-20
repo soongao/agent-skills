@@ -10,6 +10,8 @@ Each skill is stored under `skills/<skill-name>/SKILL.md`. The skill content sho
 skills/
   design-clarifier/
     SKILL.md
+    assets/
+      design-clarification-result-template.md
 ```
 
 ## Authoring Principles
@@ -18,7 +20,7 @@ skills/
 - Put trigger information in the frontmatter `description`.
 - Keep the body concise and procedural.
 - Prefer local source-of-truth documents over generic assumptions.
-- Add extra files only when they directly support the skill.
+- Add extra files only when they directly support the skill, such as reusable templates in `assets/`.
 - Avoid runtime-specific install scripts or metadata in this repository.
 
 ## Current Skills

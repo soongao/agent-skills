@@ -94,7 +94,19 @@ Design contract:
 - Open blockers:
 ```
 
-### 6. Execute Against the Contract
+### 6. Record the Result
+
+Before writing a long answer, making code changes, finalizing wording, or executing a plan, record the clarified result in a Markdown file.
+
+- Use `assets/design-clarification-result-template.md` as the template.
+- If the user specifies an output path, write the result there.
+- Otherwise, write to `docs/design-clarifier/YYYY-MM-DD-<topic>.md` in the target workspace.
+- Keep the record concise but complete enough for another agent to understand the decision without the original conversation.
+- Include the goal, scope, source of truth, confirmed decisions, assumptions, open blockers, and next action.
+- Update the file when the user corrects the contract or when important decisions change.
+- If there is no writable workspace or the task is chat-only, provide the completed Markdown content in the response and say where it should be saved.
+
+### 7. Execute Against the Contract
 
 - Keep output aligned with the confirmed model.
 - Use the user's preferred terms, not nearby generic alternatives.
@@ -103,12 +115,13 @@ Design contract:
 - For implementation tasks, keep edits scoped to the confirmed boundaries and verify behavior.
 - For writing tasks outside a code workspace, treat the user's source material, terminology, and examples as the source of truth.
 
-### 7. Self-Check Before Finalizing
+### 8. Self-Check Before Finalizing
 
 Before the final answer or patch, check:
 
 - Did I use the same conceptual model the user confirmed?
 - Did I rely on docs/code when the user asked me to?
+- Did I record the clarified result in Markdown or provide the filled Markdown content when writing was not possible?
 - Did I introduce unsupported terminology or claims?
 - Did I accidentally turn one concept into two, or merge concepts the user wanted separate?
 - Did I answer the latest request rather than an earlier thread state?
