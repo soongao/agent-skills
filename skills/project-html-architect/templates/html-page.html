@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>__PAGE_TITLE__</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f7f8fb;
+      --text: #1f2933;
+      --muted: #617080;
+      --line: #d8dee8;
+      --panel: #ffffff;
+      --accent: #2563eb;
+      --accent-soft: #e8f0ff;
+      --code: #102a43;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65;
+    }
+
+    main {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 48px 24px 64px;
+    }
+
+    header {
+      margin-bottom: 32px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    h1,
+    h2,
+    h3 {
+      line-height: 1.25;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(2rem, 4vw, 3rem);
+    }
+
+    h2 {
+      margin: 40px 0 14px;
+      font-size: 1.55rem;
+    }
+
+    h3 {
+      margin: 24px 0 10px;
+      font-size: 1.15rem;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .thesis {
+      max-width: 880px;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    section {
+      margin-top: 28px;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin: 24px 0;
+    }
+
+    .summary-item,
+    .diagram,
+    .takeaway {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+    }
+
+    .summary-item strong {
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .diagram {
+      margin: 18px 0;
+      overflow-x: auto;
+    }
+
+    svg {
+      max-width: 100%;
+      height: auto;
+    }
+
+    table {
+      width: 100%;
+      margin: 18px 0;
+      border-collapse: collapse;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    th,
+    td {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: var(--accent-soft);
+      color: var(--code);
+      font-weight: 650;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    code {
+      color: var(--code);
+      background: #eef2f7;
+      border-radius: 4px;
+      padding: 1px 5px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.92em;
+    }
+
+    .takeaway {
+      margin-top: 34px;
+      border-color: #b9cdf8;
+      background: #f7fbff;
+    }
+
+    @media (max-width: 720px) {
+      main {
+        padding: 32px 16px 48px;
+      }
+
+      th,
+      td {
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>__PROJECT_OR_MODULE_NAME__</h1>
+      <p class="thesis">__ONE_SENTENCE_THESIS__</p>
+    </header>
+
+    <section>
+      <h2>__MECHANISM_SECTION_TITLE__</h2>
+      <p>__FIRST_PRINCIPLES_QUESTION_OR_THESIS__</p>
+      <p>__MECHANISM_EXPLANATION__</p>
+
+      <div class="diagram" aria-label="Architecture diagram">
+        <svg viewBox="0 0 760 220" role="img">
+          <title>Architecture flow</title>
+          <defs>
+            <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+              <path d="M0,0 L0,6 L9,3 z" fill="#2563eb"></path>
+            </marker>
+          </defs>
+          <rect x="30" y="70" width="150" height="72" rx="8" fill="#e8f0ff" stroke="#2563eb"></rect>
+          <text x="105" y="102" text-anchor="middle" fill="#102a43" font-size="16">Input</text>
+          <text x="105" y="124" text-anchor="middle" fill="#617080" font-size="13">__INPUT_ROLE__</text>
+
+          <rect x="305" y="70" width="150" height="72" rx="8" fill="#ffffff" stroke="#8aa4d6"></rect>
+          <text x="380" y="102" text-anchor="middle" fill="#102a43" font-size="16">Core Mechanism</text>
+          <text x="380" y="124" text-anchor="middle" fill="#617080" font-size="13">__CORE_ROLE__</text>
+
+          <rect x="580" y="70" width="150" height="72" rx="8" fill="#e8f0ff" stroke="#2563eb"></rect>
+          <text x="655" y="102" text-anchor="middle" fill="#102a43" font-size="16">Output</text>
+          <text x="655" y="124" text-anchor="middle" fill="#617080" font-size="13">__OUTPUT_ROLE__</text>
+
+          <line x1="180" y1="106" x2="295" y2="106" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow)"></line>
+          <line x1="455" y1="106" x2="570" y2="106" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow)"></line>
+        </svg>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Problem</th>
+            <th>Mechanism</th>
+            <th>Engineering Gain</th>
+            <th>Evidence</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>__PROBLEM__</td>
+            <td>__MECHANISM__</td>
+            <td>__GAIN__</td>
+            <td><code>__SOURCE_FILE_OR_DOC__</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="takeaway">
+      <h2>__FINAL_SYNTHESIS_TITLE__</h2>
+      <p>__FINAL_SYNTHESIS__</p>
+    </section>
+  </main>
+</body>
+</html>

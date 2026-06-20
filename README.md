@@ -12,6 +12,10 @@ skills/
     SKILL.md
     assets/
       design-clarification-result-template.md
+  project-html-architect/
+    SKILL.md
+    templates/
+      html-page.html
 ```
 
 ## Authoring Principles
@@ -26,3 +30,4 @@ skills/
 ## Current Skills
 
 - `design-clarifier`: Clarify intent, terminology, scope, and design contracts before writing or implementing ambiguous work.
+- `project-html-architect`: Read real code projects and turn them into architect/interviewer-oriented HTML learning material, diagrams, tables, and optional resume wording.
